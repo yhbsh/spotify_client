@@ -1,4 +1,8 @@
 PODS:
+  - assets_audio_player (0.0.1):
+    - FlutterMacOS
+  - assets_audio_player_web (0.0.1):
+    - FlutterMacOS
   - desktop_window (0.0.1):
     - FlutterMacOS
   - FlutterMacOS (1.0.0)
@@ -13,6 +17,8 @@ PODS:
     - FMDB (>= 2.7.5)
 
 DEPENDENCIES:
+  - assets_audio_player (from `Flutter/ephemeral/.symlinks/plugins/assets_audio_player/macos`)
+  - assets_audio_player_web (from `Flutter/ephemeral/.symlinks/plugins/assets_audio_player_web/macos`)
   - desktop_window (from `Flutter/ephemeral/.symlinks/plugins/desktop_window/macos`)
   - FlutterMacOS (from `Flutter/ephemeral`)
   - path_provider_foundation (from `Flutter/ephemeral/.symlinks/plugins/path_provider_foundation/darwin`)
@@ -23,6 +29,10 @@ SPEC REPOS:
     - FMDB
 
 EXTERNAL SOURCES:
+  assets_audio_player:
+    :path: Flutter/ephemeral/.symlinks/plugins/assets_audio_player/macos
+  assets_audio_player_web:
+    :path: Flutter/ephemeral/.symlinks/plugins/assets_audio_player_web/macos
   desktop_window:
     :path: Flutter/ephemeral/.symlinks/plugins/desktop_window/macos
   FlutterMacOS:
@@ -33,6 +43,8 @@ EXTERNAL SOURCES:
     :path: Flutter/ephemeral/.symlinks/plugins/sqflite/macos
 
 SPEC CHECKSUMS:
+  assets_audio_player: be2578e6f11dd4d183412e97143673c3c4cb2e8a
+  assets_audio_player_web: 917101123b6db8f73156835c0fa266c11340ff15
   desktop_window: fb7c4f12c1129f947ac482296b6f14059d57a3c3
   FlutterMacOS: 8f6f14fa908a6fb3fba0cd85dbd81ec4b251fb24
   FMDB: 2ce00b547f966261cd18927a3ddb07cb6f3db82a
