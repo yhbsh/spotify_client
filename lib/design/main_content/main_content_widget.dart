@@ -11,7 +11,6 @@ class MainContentWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     final size = MediaQuery.sizeOf(context);
     return SizedBox(
-      height: size.height * .9,
       width: size.width * .85,
       child: const DecoratedBox(
         decoration: BoxDecoration(gradient: ColorManager.mainContentBackgroundGradient),

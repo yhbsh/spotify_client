@@ -11,7 +11,6 @@ class LeftSideBarWidget extends StatelessWidget {
     final size = MediaQuery.sizeOf(context);
 
     return SizedBox(
-      height: size.height * .9,
       width: size.width * .15,
       child: ColoredBox(
         color: ColorManager.sideBarBackgroundColor,
