@@ -8,10 +8,8 @@ class LeftSideBarWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-
     return SizedBox(
-      width: size.width * .15,
+      width: 1280 * .15,
       child: ColoredBox(
         color: ColorManager.sideBarBackgroundColor,
         child: Column(
