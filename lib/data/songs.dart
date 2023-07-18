@@ -13,6 +13,7 @@ abstract class SongsData {
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
             'sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
         image: i == randomIndex ? null : 'https://picsum.photos/200/300?random=$i',
+        artist: 'Lorem Ipsum',
       );
     },
   );

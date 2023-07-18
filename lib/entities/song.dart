@@ -5,12 +5,14 @@ class Song {
   final String name;
   final String description;
   final String? image;
+  final String artist;
 
   const Song({
     required this.id,
     required this.name,
     required this.description,
     this.image,
+    required this.artist,
   });
 
   Map<String, dynamic> toMap() {
@@ -19,6 +21,7 @@ class Song {
       'name': name,
       'description': description,
       'image': image,
+      'artist': artist,
     };
   }
 
@@ -28,6 +31,7 @@ class Song {
       name: map['name'] as String,
       description: map['description'] as String,
       image: map['image'] != null ? map['image'] as String : null,
+      artist: map['artist'] as String,
     );
   }
 
@@ -37,18 +41,22 @@ class Song {
 
   @override
   String toString() {
-    return 'Song(id: $id, name: $name, description: $description, image: $image)';
+    return 'Song(id: $id, name: $name, description: $description, image: $image, artist: $artist)';
   }
 
   @override
   bool operator ==(covariant Song other) {
     if (identical(this, other)) return true;
 
-    return other.id == id && other.name == name && other.description == description && other.image == image;
+    return other.id == id &&
+        other.name == name &&
+        other.description == description &&
+        other.image == image &&
+        other.artist == artist;
   }
 
   @override
   int get hashCode {
-    return id.hashCode ^ name.hashCode ^ description.hashCode ^ image.hashCode;
+    return id.hashCode ^ name.hashCode ^ description.hashCode ^ image.hashCode ^ artist.hashCode;
   }
 }
