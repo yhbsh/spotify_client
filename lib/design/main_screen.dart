@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'bottom_bar/bottom_bar_widget.dart';
-import 'left_side_bar/left_side_bar_widget.dart';
+import 'side_bar/side_bar.dart';
 import 'main_content/main_content_widget.dart';
 
 class MainScreen extends StatelessWidget {
@@ -18,7 +18,7 @@ class MainScreen extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                LeftSideBarWidget(),
+                SideBar(),
                 MainContentWidget(),
               ],
             ),

@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 
 import '../../resources/color_manager.dart';
 import '../common/current_song_image.dart';
-import 'left_side_bar_tile.dart';
+import 'side_bar_list_tile.dart';
 
-class LeftSideBarWidget extends StatelessWidget {
-  const LeftSideBarWidget({super.key});
+class SideBar extends StatelessWidget {
+  const SideBar({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,17 +29,17 @@ class LeftSideBarWidget extends StatelessWidget {
             Expanded(
               child: Column(
                 children: [
-                  LeftSideBarTile(
+                  SideBarListTile(
                     onTap: () {},
                     title: 'Home',
                     icon: const Icon(Icons.home, color: Colors.white),
                   ),
-                  LeftSideBarTile(
+                  SideBarListTile(
                     onTap: () {},
                     title: 'Search',
                     icon: const Icon(Icons.search, color: Colors.white),
                   ),
-                  LeftSideBarTile(
+                  SideBarListTile(
                     onTap: () {},
                     title: 'Your Library',
                     icon: const Icon(Icons.library_music, color: Colors.white),

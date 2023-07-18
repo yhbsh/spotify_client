@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class LeftSideBarTile extends StatelessWidget {
-  const LeftSideBarTile({
+class SideBarListTile extends StatelessWidget {
+  const SideBarListTile({
     super.key,
     required this.icon,
     required this.title,
