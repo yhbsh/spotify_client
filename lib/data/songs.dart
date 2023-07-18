@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import 'package:spotify/entities/song.dart';
+import '../entities/song.dart';
 
 abstract class SongsData {
   static final songs = List.generate(
