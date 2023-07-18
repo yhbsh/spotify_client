@@ -4,14 +4,14 @@ import '../../../entities/song.dart';
 import '../../../notifiers/songs_notifier.dart';
 import 'song_grid_card.dart';
 
-class DiscoverSongsGrid extends StatefulWidget {
-  const DiscoverSongsGrid({super.key});
+class SongsGrid extends StatefulWidget {
+  const SongsGrid({super.key});
 
   @override
-  State<DiscoverSongsGrid> createState() => _DiscoverSongsGridState();
+  State<SongsGrid> createState() => _SongsGridState();
 }
 
-class _DiscoverSongsGridState extends State<DiscoverSongsGrid> {
+class _SongsGridState extends State<SongsGrid> {
   late final SongsNotifier _notifier;
   late final List<Song> _songs;
 
