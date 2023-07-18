@@ -9,7 +9,10 @@ class Spotify extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: ThemeData.from(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.greenAccent,
+        ),
+        useMaterial3: true,
       ),
       home: const MainScreen(),
     );
