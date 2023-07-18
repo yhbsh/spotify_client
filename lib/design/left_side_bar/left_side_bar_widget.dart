@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../resources/color_manager.dart';
+import '../common/current_song_image.dart';
 import 'left_side_bar_tile.dart';
 
 class LeftSideBarWidget extends StatelessWidget {
@@ -46,6 +47,7 @@ class LeftSideBarWidget extends StatelessWidget {
                 ],
               ),
             ),
+            const Expanded(child: CurrentSongImage()),
           ],
         ),
       ),
