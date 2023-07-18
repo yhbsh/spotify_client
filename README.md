@@ -1,4 +1,6 @@
-# Spotify, A pixel perfect spotify clone made with flutter for desktop and web
+# Spotify Clone
+
+a pixel perfect spotify clone made with flutter for desktop and web
 
 ## Dependencies
 
