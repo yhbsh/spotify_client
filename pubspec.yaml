@@ -10,6 +10,7 @@ dependencies:
   desktop_window: ^0.4.0
   flutter:
     sdk: flutter
+  flutter_staggered_animations: ^1.1.1
   provider: ^6.0.5
 
 dev_dependencies:
