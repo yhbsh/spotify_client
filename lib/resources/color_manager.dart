@@ -5,4 +5,18 @@ abstract class ColorManager {
 
   static const primaryColor = Colors.greenAccent;
   static const sideBarBackgroundColor = Color(0xFF121212);
+
+  static const mainContentBackgroundGradient = LinearGradient(
+    colors: [
+      Colors.black54,
+      Colors.black87,
+      Colors.black87,
+      Colors.black87,
+      Colors.black87,
+      Colors.black,
+      Colors.black,
+    ],
+    begin: Alignment.topCenter,
+    end: Alignment.bottomCenter,
+  );
 }
