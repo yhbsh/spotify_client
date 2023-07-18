@@ -6,5 +6,12 @@ class Spotify extends StatelessWidget {
   const Spotify({super.key});
 
   @override
-  Widget build(BuildContext context) => const MaterialApp(home: MainScreen());
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      theme: ThemeData.from(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.greenAccent),
+      ),
+      home: const MainScreen(),
+    );
+  }
 }

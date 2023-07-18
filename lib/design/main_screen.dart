@@ -1,30 +1,26 @@
 import 'package:flutter/material.dart';
 
+import 'bottom_bar_widget.dart';
+import 'left_side_bar_widget.dart';
+import 'main_content_widget.dart';
+
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: Column(
+        mainAxisSize: MainAxisSize.min,
         children: [
-          Flexible(
-            flex: 5,
-            child: Row(
-              children: [
-                Flexible(child: Container(color: Colors.greenAccent)),
-                Flexible(child: Container(color: Colors.redAccent)),
-              ],
-            ),
+          Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              LeftSideBarWidget(),
+              MainContentWidget(),
+            ],
           ),
-          Flexible(
-            flex: 1,
-            child: Row(
-              children: [
-                Flexible(child: Container(color: Colors.yellowAccent)),
-              ],
-            ),
-          ),
+          BottomBarWidget(),
         ],
       ),
     );
