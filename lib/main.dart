@@ -8,7 +8,7 @@ Future<void> main() async {
 
   await DesktopWindow.setWindowSize(const Size(1280, 720));
   await DesktopWindow.setMaxWindowSize(const Size(1280, 720));
-  await DesktopWindow.setMinWindowSize(const Size(640, 360));
+  await DesktopWindow.setMinWindowSize(const Size(800, 600));
 
   runApp(const Spotify());
 }
