@@ -47,7 +47,10 @@ class LeftSideBarWidget extends StatelessWidget {
                 ],
               ),
             ),
-            const Expanded(child: CurrentSongImage()),
+            const Padding(
+              padding: EdgeInsets.all(16),
+              child: CurrentSongImage(),
+            ),
           ],
         ),
       ),
