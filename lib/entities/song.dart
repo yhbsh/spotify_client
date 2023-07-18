@@ -5,6 +5,7 @@ class Song {
   final String name;
   final String description;
   final String? image;
+  final String url;
   final String artist;
 
   const Song({
@@ -12,6 +13,7 @@ class Song {
     required this.name,
     required this.description,
     this.image,
+    required this.url,
     required this.artist,
   });
 
@@ -21,6 +23,7 @@ class Song {
       'name': name,
       'description': description,
       'image': image,
+      'url': url,
       'artist': artist,
     };
   }
@@ -31,6 +34,7 @@ class Song {
       name: map['name'] as String,
       description: map['description'] as String,
       image: map['image'] != null ? map['image'] as String : null,
+      url: map['url'] as String,
       artist: map['artist'] as String,
     );
   }
@@ -41,7 +45,7 @@ class Song {
 
   @override
   String toString() {
-    return 'Song(id: $id, name: $name, description: $description, image: $image, artist: $artist)';
+    return 'Song(id: $id, name: $name, description: $description, image: $image, url: $url, artist: $artist)';
   }
 
   @override
@@ -52,11 +56,12 @@ class Song {
         other.name == name &&
         other.description == description &&
         other.image == image &&
+        other.url == url &&
         other.artist == artist;
   }
 
   @override
   int get hashCode {
-    return id.hashCode ^ name.hashCode ^ description.hashCode ^ image.hashCode ^ artist.hashCode;
+    return id.hashCode ^ name.hashCode ^ description.hashCode ^ image.hashCode ^ url.hashCode ^ artist.hashCode;
   }
 }
