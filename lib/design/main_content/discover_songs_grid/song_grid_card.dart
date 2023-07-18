@@ -1,7 +1,9 @@
-import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../entities/song.dart';
+import '../../../notifiers/current_song_notifier.dart';
+import 'songs_grid_card_image.dart';
 
 class SongGridCard extends StatelessWidget {
   const SongGridCard({
@@ -13,55 +15,45 @@ class SongGridCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        color: Colors.grey.shade900,
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(12.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            AspectRatio(
-              aspectRatio: 1,
-              child: switch (song.image) {
-                null => const Placeholder(),
-                String image => CachedNetworkImage(
-                    imageUrl: image,
-                    fit: BoxFit.cover,
-                    imageBuilder: (_, provider) => DecoratedBox(
-                      decoration: BoxDecoration(
-                        borderRadius: const BorderRadius.all(Radius.circular(4)),
-                        image: DecorationImage(image: provider, fit: BoxFit.cover),
-                      ),
-                    ),
+    return GestureDetector(
+      onTap: () => context.read<CurrentSongNotifier>().play(song),
+      child: DecoratedBox(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.grey.shade900,
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SongsGridCardImage(image: song.image),
+              const SizedBox(height: 8),
+              Expanded(
+                child: Text(
+                  song.name,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                    overflow: TextOverflow.ellipsis,
                   ),
-              },
-            ),
-            const Spacer(),
-            Text(
-              song.name,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 18,
-                fontWeight: FontWeight.w600,
-                overflow: TextOverflow.ellipsis,
+                ),
               ),
-            ),
-            const SizedBox(height: 8),
-            Text(
-              song.description,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 12,
-                fontWeight: FontWeight.w400,
-                overflow: TextOverflow.ellipsis,
+              Expanded(
+                child: Text(
+                  song.description,
+                  style: const TextStyle(
+                    color: Colors.white,
+                    fontSize: 12,
+                    fontWeight: FontWeight.w400,
+                    overflow: TextOverflow.ellipsis,
+                  ),
+                  maxLines: 2,
+                ),
               ),
-              maxLines: 2,
-            ),
-            const Spacer(),
-          ],
+            ],
+          ),
         ),
       ),
     );
