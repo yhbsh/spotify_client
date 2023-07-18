@@ -8,11 +8,8 @@ abstract class ColorManager {
 
   static const mainContentBackgroundGradient = LinearGradient(
     colors: [
-      Colors.black54,
       Colors.black87,
-      Colors.black87,
-      Colors.black87,
-      Colors.black87,
+      Colors.black,
       Colors.black,
       Colors.black,
     ],
