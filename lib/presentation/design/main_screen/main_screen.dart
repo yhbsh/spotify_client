@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import '../../../main.dart';
 import '../side_bar/side_bar.dart';
 import 'bottom_bar/bottom_bar.dart';
+import 'library_content/library_content.dart';
 import 'main_content/main_content.dart';
 
 class MainScreen extends StatelessWidget {
@@ -9,7 +11,7 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Material(
+    return Material(
       color: Colors.transparent,
       child: Column(
         mainAxisSize: MainAxisSize.min,
@@ -18,14 +20,30 @@ class MainScreen extends StatelessWidget {
             child: Row(
               mainAxisSize: MainAxisSize.min,
               children: [
-                SideBar(),
-                MainContent(),
+                const SideBar(),
+                Expanded(
+                  child: Navigator(
+                    key: shellKey,
+                    onGenerateRoute: _onGenerateRoute,
+                  ),
+                ),
               ],
             ),
           ),
-          BottomBar(),
+          const BottomBar(),
         ],
       ),
     );
   }
+
+  Route<dynamic> _onGenerateRoute(RouteSettings settings) => PageRouteBuilder(
+        transitionsBuilder: (_, animation, __, child) =>
+            FadeTransition(opacity: animation, child: child),
+        transitionDuration: const Duration(milliseconds: 100),
+        pageBuilder: (_, __, ___) => switch (settings.name) {
+          '/' => const MainContent(),
+          '/library' => const LibraryContent(),
+          _ => throw 'Route not found',
+        },
+      );
 }

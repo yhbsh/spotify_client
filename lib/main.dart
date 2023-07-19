@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 
 import 'core/spotify.dart';
 
+final shellKey = GlobalKey<NavigatorState>();
+
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
 

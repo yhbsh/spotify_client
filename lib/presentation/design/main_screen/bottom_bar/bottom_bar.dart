@@ -9,11 +9,10 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final size = MediaQuery.sizeOf(context);
-    return SizedBox(
+    return const SizedBox(
       height: 720 * 0.1,
-      width: size.width,
-      child: const ColoredBox(
+      width: double.infinity,
+      child: ColoredBox(
         color: Colors.black12,
         child: Stack(
           alignment: Alignment.center,

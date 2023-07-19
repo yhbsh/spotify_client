@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../core/resources/color_manager.dart';
+import '../../../main.dart';
 import '../common/current_song_image.dart';
 import 'side_bar_list_tile.dart';
 
@@ -11,6 +12,7 @@ class SideBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: 1280 * .15,
+      height: double.infinity,
       child: ColoredBox(
         color: ColorManager.sideBarBackgroundColor,
         child: Column(
@@ -30,7 +32,9 @@ class SideBar extends StatelessWidget {
               child: Column(
                 children: [
                   SideBarListTile(
-                    onTap: () {},
+                    onTap: () {
+                      shellKey.currentState!.pushReplacementNamed('/');
+                    },
                     title: 'Home',
                     icon: const Icon(Icons.home, color: Colors.white),
                   ),
@@ -40,7 +44,9 @@ class SideBar extends StatelessWidget {
                     icon: const Icon(Icons.search, color: Colors.white),
                   ),
                   SideBarListTile(
-                    onTap: () {},
+                    onTap: () {
+                      shellKey.currentState!.pushReplacementNamed('/library');
+                    },
                     title: 'Your Library',
                     icon: const Icon(Icons.library_music, color: Colors.white),
                   ),
