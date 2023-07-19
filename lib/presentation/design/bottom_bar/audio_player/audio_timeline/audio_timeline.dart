@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../notifiers/current_song_notifier.dart';
-import '../../../states/current_song_state.dart';
+import '../../../../notifiers/current_song_notifier.dart';
+import '../../../../states/current_song_state.dart';
 import 'audio_slider.dart';
 
-class SongTimelineWidget extends StatelessWidget {
-  const SongTimelineWidget({super.key});
+class AudioTimeline extends StatelessWidget {
+  const AudioTimeline({super.key});
 
   @override
   Widget build(BuildContext context) {

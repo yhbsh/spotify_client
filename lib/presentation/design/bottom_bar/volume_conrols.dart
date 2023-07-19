@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../notifiers/current_song_notifier.dart';
+import '../../notifiers/current_song_notifier.dart';
 
-class BottomVBarVolumeConrolButtons extends StatelessWidget {
-  const BottomVBarVolumeConrolButtons({super.key});
+class VolumeConrols extends StatelessWidget {
+  const VolumeConrols({super.key});
 
   void _toggleMute(BuildContext context) {
     final notifier = context.read<CurrentSongNotifier>();

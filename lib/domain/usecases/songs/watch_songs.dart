@@ -1,5 +1,5 @@
 import 'package:dartz/dartz.dart';
-import 'package:spotify/data/dtos/requests/watch_songs_request.dart';
+import '../../../data/dtos/requests/watch_songs_request.dart';
 
 import '../../../core/interfaces/failure.dart';
 import '../../../core/interfaces/usecase.dart';

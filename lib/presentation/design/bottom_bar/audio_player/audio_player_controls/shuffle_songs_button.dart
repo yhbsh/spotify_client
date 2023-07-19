@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class ShuffleMusicButton extends StatelessWidget {
-  const ShuffleMusicButton({super.key});
+class ShuffleSongsButton extends StatelessWidget {
+  const ShuffleSongsButton({super.key});
 
   @override
   Widget build(BuildContext context) {

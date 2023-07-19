@@ -4,8 +4,8 @@ import '../../../core/resources/color_manager.dart';
 import 'discover_header.dart';
 import 'songs_grid/songs_grid.dart';
 
-class MainContentWidget extends StatelessWidget {
-  const MainContentWidget({super.key});
+class MainContent extends StatelessWidget {
+  const MainContent({super.key});
 
   @override
   Widget build(BuildContext context) {

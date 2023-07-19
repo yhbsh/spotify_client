@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 
-import 'play_pause_music_button.dart';
-import 'play_next_song_button.dart';
-import 'play_previous_song_button.dart';
-import 'repeat_songs_button.dart';
-import 'shuffle_songs_button.dart';
-import 'song_timeline_widget.dart';
+import 'audio_timeline/audio_timeline.dart';
+import 'audio_player_controls/play_next_song_button.dart';
+import 'audio_player_controls/play_pause_audio_button.dart';
+import 'audio_player_controls/play_previous_song_button.dart';
+import 'audio_player_controls/repeat_songs_button.dart';
+import 'audio_player_controls/shuffle_songs_button.dart';
 
-class BottomBarSongsPlayerWidget extends StatelessWidget {
-  const BottomBarSongsPlayerWidget({super.key});
+class AudioPlayer extends StatelessWidget {
+  const AudioPlayer({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -19,11 +19,11 @@ class BottomBarSongsPlayerWidget extends StatelessWidget {
         Row(
           mainAxisSize: MainAxisSize.min,
           children: [
-            ShuffleMusicButton(),
+            ShuffleSongsButton(),
             SizedBox(width: 10),
             PlayPreviousSongButton(),
             SizedBox(width: 10),
-            PlayPauseSongButton(),
+            PlayPauseAudioButton(),
             SizedBox(width: 10),
             PlayNextSongButton(),
             SizedBox(width: 10),
@@ -31,7 +31,7 @@ class BottomBarSongsPlayerWidget extends StatelessWidget {
           ],
         ),
         SizedBox(height: 4),
-        SongTimelineWidget(),
+        AudioTimeline(),
         SizedBox(height: 4),
       ],
     );

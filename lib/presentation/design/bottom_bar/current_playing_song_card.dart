@@ -5,8 +5,8 @@ import '../../notifiers/current_song_notifier.dart';
 import '../../states/current_song_state.dart';
 import '../common/current_song_image.dart';
 
-class BottomBarPlayingSongWidget extends StatelessWidget {
-  const BottomBarPlayingSongWidget({super.key});
+class CurrentPlayingSongCard extends StatelessWidget {
+  const CurrentPlayingSongCard({super.key});
 
   @override
   Widget build(BuildContext context) {
