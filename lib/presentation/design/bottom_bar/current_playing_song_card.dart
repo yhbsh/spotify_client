@@ -17,7 +17,7 @@ class CurrentPlayingSongCard extends StatelessWidget {
       top: 8,
       bottom: 8,
       child: switch (state.status) {
-        CurrentSongStatus.idle => const SizedBox.shrink(),
+        CurrentSongStatus.stopped => const SizedBox.shrink(),
         CurrentSongStatus.playing || CurrentSongStatus.paused => Row(
             children: [
               const CurrentSongImage(),

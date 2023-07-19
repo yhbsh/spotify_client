@@ -135,7 +135,7 @@ class CurrentSongNotifier extends ChangeNotifier {
     stopResult.fold(
       (failure) => debugPrint('stop failure: $failure'),
       (_) {
-        _state = _state.copyWith(status: CurrentSongStatus.idle);
+        _state = _state.copyWith(status: CurrentSongStatus.stopped);
         notifyListeners();
       },
     );

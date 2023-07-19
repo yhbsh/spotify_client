@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 
-import 'audio_timeline/audio_timeline.dart';
 import 'audio_player_controls/play_next_song_button.dart';
 import 'audio_player_controls/play_pause_audio_button.dart';
 import 'audio_player_controls/play_previous_song_button.dart';
 import 'audio_player_controls/repeat_songs_button.dart';
 import 'audio_player_controls/shuffle_songs_button.dart';
+import 'audio_timeline/audio_timeline.dart';
 
 class AudioPlayer extends StatelessWidget {
   const AudioPlayer({super.key});

@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import 'audio_player/audio_player.dart';
 import 'current_playing_song_card.dart';
 import 'volume_conrols.dart';
-import 'audio_player/audio_player.dart';
 
 class BottomBar extends StatelessWidget {
   const BottomBar({super.key});

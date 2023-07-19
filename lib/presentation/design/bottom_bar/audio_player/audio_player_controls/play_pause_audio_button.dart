@@ -10,7 +10,7 @@ class PlayPauseAudioButton extends StatelessWidget {
   void _onPressed(BuildContext context) async {
     final notifier = context.read<CurrentSongNotifier>();
     return switch (notifier.state.status) {
-      CurrentSongStatus.idle => null,
+      CurrentSongStatus.stopped => null,
       CurrentSongStatus.paused => notifier.resume(),
       CurrentSongStatus.playing => notifier.pause()
     };
@@ -30,7 +30,7 @@ class PlayPauseAudioButton extends StatelessWidget {
         selector: (_, notifier) => notifier.state.status,
         builder: (_, status, __) => Icon(
           switch (status) {
-            CurrentSongStatus.idle || CurrentSongStatus.paused => Icons.play_arrow,
+            CurrentSongStatus.stopped || CurrentSongStatus.paused => Icons.play_arrow,
             CurrentSongStatus.playing => Icons.pause,
           },
           size: 25,

@@ -4,7 +4,7 @@ class CurrentSongState {
   final Song? song;
   final CurrentSongStatus status;
 
-  const CurrentSongState({this.song, this.status = CurrentSongStatus.idle});
+  const CurrentSongState({this.song, this.status = CurrentSongStatus.stopped});
 
   CurrentSongState copyWith({
     Song? song,
@@ -30,4 +30,4 @@ class CurrentSongState {
   int get hashCode => song.hashCode ^ status.hashCode;
 }
 
-enum CurrentSongStatus { idle, playing, paused }
+enum CurrentSongStatus { stopped, playing, paused }

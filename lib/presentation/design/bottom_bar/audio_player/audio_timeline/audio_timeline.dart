@@ -27,7 +27,7 @@ class AudioTimeline extends StatelessWidget {
               width: 200,
               child: AudioSlider(
                 value: switch (notifier.state.status) {
-                  CurrentSongStatus.idle => 0,
+                  CurrentSongStatus.stopped => 0,
                   _ =>
                     notifier.currentPosition.inMilliseconds / notifier.totalDuration.inMilliseconds,
                 },

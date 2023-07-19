@@ -13,7 +13,7 @@ class CurrentSongImage extends StatelessWidget {
     final state =
         context.select<CurrentSongNotifier, CurrentSongState>((notifier) => notifier.state);
     return switch (state.status) {
-      CurrentSongStatus.idle => const SizedBox.shrink(),
+      CurrentSongStatus.stopped => const SizedBox.shrink(),
       CurrentSongStatus.playing || CurrentSongStatus.paused => switch (state.song!.image) {
           null => const SizedBox.expand(),
           String image => CachedNetworkImage(
