@@ -16,7 +16,7 @@ class SongGridCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => context.read<CurrentSongNotifier>().play(song),
+      onTap: () => context.read<CurrentSongNotifier>().open(song),
       child: DecoratedBox(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
