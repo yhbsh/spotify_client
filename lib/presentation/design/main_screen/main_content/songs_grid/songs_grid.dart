@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../domain/entities/song.dart';
-import '../../../notifiers/songs_notifier.dart';
+import '../../../../../domain/entities/song.dart';
+import '../../../../notifiers/songs_notifier.dart';
 import 'song_grid_card.dart';
 
 class SongsGrid extends StatefulWidget {

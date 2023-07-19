@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
+import '../common/side_bar/side_bar.dart';
 import 'bottom_bar/bottom_bar.dart';
 import 'main_content/main_content.dart';
-import 'side_bar/side_bar.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({super.key});

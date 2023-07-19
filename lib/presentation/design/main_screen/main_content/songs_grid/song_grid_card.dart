@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../domain/entities/song.dart';
-import '../../../notifiers/current_song_notifier.dart';
+import '../../../../../domain/entities/song.dart';
+import '../../../../notifiers/current_song_notifier.dart';
 import 'songs_grid_card_image.dart';
 
 class SongGridCard extends StatelessWidget {

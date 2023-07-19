@@ -6,7 +6,7 @@ import '../data/repositories/audio_player_repository_impl.dart';
 import '../data/repositories/songs_repository_impl.dart';
 import '../domain/repositories/audio_player_repository.dart';
 import '../domain/repositories/songs_repository.dart';
-import '../presentation/design/main_screen.dart';
+import '../presentation/design/main_screen/main_screen.dart';
 import '../presentation/notifiers/current_song_notifier.dart';
 import '../presentation/notifiers/songs_notifier.dart';
 

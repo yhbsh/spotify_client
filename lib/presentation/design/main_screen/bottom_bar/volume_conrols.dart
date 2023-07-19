@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../notifiers/current_song_notifier.dart';
+import '../../../notifiers/current_song_notifier.dart';
 
 class VolumeConrols extends StatelessWidget {
   const VolumeConrols({super.key});

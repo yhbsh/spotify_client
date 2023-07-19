@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../../notifiers/current_song_notifier.dart';
-import '../../../../states/current_song_state.dart';
+import '../../../../../notifiers/current_song_notifier.dart';
+import '../../../../../states/current_song_state.dart';
 import 'audio_slider.dart';
 
 class AudioTimeline extends StatelessWidget {

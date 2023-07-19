@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../notifiers/current_song_notifier.dart';
-import '../../states/current_song_state.dart';
-import '../common/current_song_image.dart';
+import '../../../notifiers/current_song_notifier.dart';
+import '../../../states/current_song_state.dart';
+import '../../common/current_song_image.dart';
 
 class CurrentPlayingSongCard extends StatelessWidget {
   const CurrentPlayingSongCard({super.key});

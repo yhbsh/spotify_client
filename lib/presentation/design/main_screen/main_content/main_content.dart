@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../../core/resources/color_manager.dart';
+import '../../../../core/resources/color_manager.dart';
 import 'discover_header.dart';
 import 'songs_grid/songs_grid.dart';
 
