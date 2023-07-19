@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../domain/entities/song.dart';
-import '../../domain/usecases/songs/fetch_songs.dart';
+import '../../domain/repositories/songs_repository.dart';
 import '../../domain/usecases/songs/watch_songs.dart';
 
 class SongsNotifier extends ChangeNotifier {
@@ -15,7 +15,7 @@ class SongsNotifier extends ChangeNotifier {
   }
 
   void _watchSongs(BuildContext context) {
-    final usecase = context.read<WatchSongsUseCase>();
+    final usecase = WatchSongsUseCase(context.read<SongsRepository>());
     const params = WatchSongsParams();
     final stream = usecase(params: params);
     stream.forEach(
@@ -31,17 +31,17 @@ class SongsNotifier extends ChangeNotifier {
     );
   }
 
-  Future<void> _fetchSongs(BuildContext context) async {
-    final usecase = context.read<FetchSongsUseCase>();
-    const params = FetchSongsParams(query: 'Discover', page: 1);
+  // Future<void> _fetchSongs(BuildContext context) async {
+  //   final usecase = FetchSongsUseCase(context.read<SongsRepository>());
+  //   const params = FetchSongsParams(limit: 20, page: 1);
 
-    final either = await usecase(params: params);
-    either.fold(
-      (failure) => debugPrint('fetch songs failure: $failure'),
-      (result) {
-        _songs.addAll(result.songs);
-        notifyListeners();
-      },
-    );
-  }
+  //   final either = await usecase(params: params);
+  //   either.fold(
+  //     (failure) => debugPrint('fetch songs failure: $failure'),
+  //     (result) {
+  //       _songs.addAll(result.songs);
+  //       notifyListeners();
+  //     },
+  //   );
+  // }
 }

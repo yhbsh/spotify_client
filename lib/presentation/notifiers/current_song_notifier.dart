@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../domain/entities/song.dart';
+import '../../domain/repositories/audio_player_repository.dart';
 import '../../domain/usecases/audio_player/get_total_duration.dart';
 import '../../domain/usecases/audio_player/mute.dart';
 import '../../domain/usecases/audio_player/open_remote_audio.dart';
@@ -32,7 +33,9 @@ class CurrentSongNotifier extends ChangeNotifier {
   final BuildContext context;
 
   void _init() {
-    final watchCurrentPositionUseCase = context.read<WatchCurrentPositionUseCase>();
+    final watchCurrentPositionUseCase = WatchCurrentPositionUseCase(
+      context.read<AudioPlayerRepository>(),
+    );
     final watchCurrentPositionStream = watchCurrentPositionUseCase();
     watchCurrentPositionStream.forEach(
       (either) => either.fold(
@@ -44,7 +47,9 @@ class CurrentSongNotifier extends ChangeNotifier {
       ),
     );
 
-    final getTotalDurationUseCase = context.read<GetTotalDurationUseCase>();
+    final getTotalDurationUseCase = GetTotalDurationUseCase(
+      context.read<AudioPlayerRepository>(),
+    );
     final getTotalDurationFuture = getTotalDurationUseCase();
     getTotalDurationFuture.then(
       (either) => either.fold(
@@ -58,7 +63,7 @@ class CurrentSongNotifier extends ChangeNotifier {
   }
 
   Future<void> setVolume(double volume) async {
-    final setVolumeUseCase = context.read<SetVolumeUseCase>();
+    final setVolumeUseCase = SetVolumeUseCase(context.read<AudioPlayerRepository>());
     final setVolumeParams = SetVolumeParams(volume);
     final setVolumeResult = await setVolumeUseCase(params: setVolumeParams);
 
@@ -79,7 +84,7 @@ class CurrentSongNotifier extends ChangeNotifier {
   }
 
   Future<void> open(Song song) async {
-    final openRemoteAudioUseCase = context.read<OpenRemoteAudioUseCase>();
+    final openRemoteAudioUseCase = OpenRemoteAudioUseCase(context.read<AudioPlayerRepository>());
     final openRemoteAudioParams = OpenRemoteAudioParams(song.url);
     final openRemoteAudioResult = await openRemoteAudioUseCase(params: openRemoteAudioParams);
 
@@ -93,7 +98,7 @@ class CurrentSongNotifier extends ChangeNotifier {
   }
 
   Future<void> resume() async {
-    final resumeUseCase = context.read<ResumeUseCase>();
+    final resumeUseCase = ResumeUseCase(context.read<AudioPlayerRepository>());
     final resumeResult = await resumeUseCase();
 
     resumeResult.fold(
@@ -106,7 +111,7 @@ class CurrentSongNotifier extends ChangeNotifier {
   }
 
   Future<void> pause() async {
-    final pauseUseCase = context.read<PauseUseCase>();
+    final pauseUseCase = PauseUseCase(context.read<AudioPlayerRepository>());
     final pauseResult = await pauseUseCase();
 
     pauseResult.fold(
@@ -119,7 +124,7 @@ class CurrentSongNotifier extends ChangeNotifier {
   }
 
   Future<void> stop() async {
-    final stopUseCase = context.read<StopUseCase>();
+    final stopUseCase = StopUseCase(context.read<AudioPlayerRepository>());
     final stopResult = await stopUseCase();
 
     stopResult.fold(
@@ -132,7 +137,7 @@ class CurrentSongNotifier extends ChangeNotifier {
   }
 
   Future<void> toggleMute() async {
-    final muteUseCase = context.read<MuteUseCase>();
+    final muteUseCase = MuteUseCase(context.read<AudioPlayerRepository>());
     final unmuteUseCase = context.read<UnmuteUseCase>();
 
     switch (_isMuted) {
@@ -152,7 +157,7 @@ class CurrentSongNotifier extends ChangeNotifier {
   }
 
   Future<void> seekTo(Duration position) async {
-    final seekToUseCase = context.read<SeekToUseCase>();
+    final seekToUseCase = SeekToUseCase(context.read<AudioPlayerRepository>());
     final seekToParams = SeekToParams(position);
     final seekToResult = await seekToUseCase(params: seekToParams);
 
