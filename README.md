@@ -10,7 +10,7 @@ a pixel perfect spotify clone made with flutter for desktop and web
 
 ## Dependencies
 
-assets_audio_player, cached_network_image, dartz, desktop_window, provider, flutter_staggered_animations
+assets_audio_player, cached_network_image, dartz, desktop_window, provider, flutter_staggered_animations, go_router
 
 ## Dev Dependencies
 
