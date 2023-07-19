@@ -18,10 +18,7 @@ class MainContentWidget extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               SizedBox(height: 60),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 40),
-                child: DiscoverHeader(),
-              ),
+              DiscoverHeader(),
               SizedBox(height: 20),
               SongsGrid(),
             ],

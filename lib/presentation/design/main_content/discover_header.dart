@@ -6,11 +6,14 @@ class DiscoverHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final textTheme = Theme.of(context).textTheme;
-    return Text(
-      'Discover',
-      style: textTheme.headlineSmall?.copyWith(
-        fontWeight: FontWeight.bold,
-        color: Colors.white,
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      child: Text(
+        'Discover',
+        style: textTheme.headlineSmall?.copyWith(
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
+        ),
       ),
     );
   }
