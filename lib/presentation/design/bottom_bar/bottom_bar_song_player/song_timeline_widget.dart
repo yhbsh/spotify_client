@@ -2,39 +2,53 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../notifiers/current_song_notifier.dart';
+import '../../../states/current_song_state.dart';
+import 'audio_slider.dart';
 
 class SongTimelineWidget extends StatelessWidget {
   const SongTimelineWidget({super.key});
 
   @override
   Widget build(BuildContext context) {
-    final currentPosition =
-        context.select<CurrentSongNotifier, Duration>((notifier) => notifier.currentPosition);
-    final totalDuration =
-        context.select<CurrentSongNotifier, Duration>((notifier) => notifier.totalDuration);
-
-    return Expanded(
-      flex: 2,
-      child: Row(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          Text(
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        Selector<CurrentSongNotifier, Duration>(
+          selector: (_, notifier) => notifier.currentPosition,
+          builder: (_, currentPosition, __) => Text(
             currentPosition.format(),
             style: const TextStyle(fontSize: 12, color: Colors.white),
           ),
-          const SizedBox(width: 10),
-          Container(
-            height: 5,
-            width: 200,
-            decoration: BoxDecoration(color: Colors.grey, borderRadius: BorderRadius.circular(10)),
-          ),
-          const SizedBox(width: 10),
-          Text(
+        ),
+        const SizedBox(width: 10),
+        Consumer<CurrentSongNotifier>(
+          builder: (_, notifier, __) {
+            return SizedBox(
+              width: 200,
+              child: AudioSlider(
+                value: switch (notifier.state.status) {
+                  CurrentSongStatus.idle => 0,
+                  _ =>
+                    notifier.currentPosition.inMilliseconds / notifier.totalDuration.inMilliseconds,
+                },
+                onTapDown: (details) {
+                  final fraction = details.localPosition.dx / 200;
+                  final positionDuration = notifier.totalDuration * fraction;
+                  notifier.seekTo(positionDuration);
+                },
+              ),
+            );
+          },
+        ),
+        const SizedBox(width: 10),
+        Selector<CurrentSongNotifier, Duration>(
+          selector: (_, notifier) => notifier.totalDuration,
+          builder: (_, totalDuration, __) => Text(
             totalDuration.format(),
             style: const TextStyle(fontSize: 12, color: Colors.white),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }
