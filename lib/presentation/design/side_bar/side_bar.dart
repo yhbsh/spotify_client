@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-import '../../../../core/resources/color_manager.dart';
-import '../current_song_image.dart';
+import '../../../core/resources/color_manager.dart';
+import '../common/current_song_image.dart';
 import 'side_bar_list_tile.dart';
 
 class SideBar extends StatelessWidget {
