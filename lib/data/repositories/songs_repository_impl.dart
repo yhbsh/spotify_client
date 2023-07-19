@@ -9,6 +9,8 @@ import '../dtos/responses/watch_songs_response.dart';
 import '../songs.dart';
 
 class SongsRepositoryImpl implements SongsRepository {
+  const SongsRepositoryImpl();
+
   @override
   Future<Either<Failure, FetchSongsResponse>> fetchSongs({required FetchSongsRequest params}) {
     final response = FetchSongsResponse(
