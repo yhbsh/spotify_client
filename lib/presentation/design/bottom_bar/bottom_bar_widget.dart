@@ -20,7 +20,7 @@ class BottomBarWidget extends StatelessWidget {
           children: [
             BottomBarPlayingSongWidget(),
             BottomBarSongsPlayerWidget(),
-            BottomBarSongControllButtons(),
+            BottomVBarVolumeConrolButtons(),
           ],
         ),
       ),
