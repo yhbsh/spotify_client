@@ -1,13 +1,13 @@
 import 'dart:math' as math;
 
-import '../domain/entities/song.dart';
+import 'dtos/responses/song_response.dart';
 
-abstract class SongsData {
-  static final songs = List.generate(
-    700,
+abstract class FakeSongsResponses {
+  static final songsResponses = List.generate(
+    200,
     (i) {
       final randomIndex = math.Random(i).nextInt(700);
-      return Song(
+      return SongResponse(
         id: i,
         name: 'Lorem Ipsum dolor sit amet $i',
         description: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, '
