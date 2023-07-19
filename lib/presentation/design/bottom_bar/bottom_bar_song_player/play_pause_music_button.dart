@@ -7,11 +7,11 @@ import '../../../states/current_song_state.dart';
 class PlayPauseSongButton extends StatelessWidget {
   const PlayPauseSongButton({super.key});
 
-  void _onPressed(BuildContext context) {
+  void _onPressed(BuildContext context) async {
     final notifier = context.read<CurrentSongNotifier>();
     return switch (notifier.state.status) {
       CurrentSongStatus.idle => null,
-      CurrentSongStatus.paused => notifier.play(notifier.state.song!),
+      CurrentSongStatus.paused => notifier.resume(),
       CurrentSongStatus.playing => notifier.pause()
     };
   }
