@@ -19,7 +19,7 @@ class _SongsGridState extends State<SongsGrid> {
 
   @override
   void initState() {
-    _notifier = SongsNotifier();
+    _notifier = SongsNotifier(context);
     _songs = _notifier.songs;
     super.initState();
   }
