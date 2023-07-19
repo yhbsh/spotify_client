@@ -9,8 +9,8 @@ class Spotify extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider.value(
-      value: CurrentSongNotifier(),
+    return ChangeNotifierProvider(
+      create: (context) => CurrentSongNotifier(context),
       child: MaterialApp(
         theme: ThemeData.from(
           colorScheme: ColorScheme.fromSeed(
