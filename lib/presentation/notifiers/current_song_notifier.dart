@@ -20,11 +20,13 @@ class CurrentSongNotifier extends ChangeNotifier {
   Duration _currentPosition = const Duration();
   Duration _totalDuration = const Duration();
   bool _isMuted = false;
+  double _volume = 1.0;
 
   CurrentSongState get state => _state;
   Duration get currentPosition => _currentPosition;
   Duration get totalDuration => _totalDuration;
   bool get isMuted => _isMuted;
+  double get volume => _volume;
 
   CurrentSongNotifier(this.context) {
     _init();
@@ -63,6 +65,9 @@ class CurrentSongNotifier extends ChangeNotifier {
   }
 
   Future<void> setVolume(double volume) async {
+    _volume = volume;
+    notifyListeners();
+
     final setVolumeUseCase = SetVolumeUseCase(context.read<AudioPlayerRepository>());
     final setVolumeParams = SetVolumeParams(volume);
     final setVolumeResult = await setVolumeUseCase(params: setVolumeParams);
@@ -138,18 +143,18 @@ class CurrentSongNotifier extends ChangeNotifier {
 
   Future<void> toggleMute() async {
     final muteUseCase = MuteUseCase(context.read<AudioPlayerRepository>());
-    final unmuteUseCase = context.read<UnmuteUseCase>();
+    final unmuteUseCase = UnmuteUseCase(context.read<AudioPlayerRepository>());
 
     switch (_isMuted) {
       case true:
         _isMuted = false;
-        notifyListeners();
+        setVolume(1);
 
         await unmuteUseCase();
         break;
       case false:
         _isMuted = true;
-        notifyListeners();
+        setVolume(0);
 
         await muteUseCase();
         break;
