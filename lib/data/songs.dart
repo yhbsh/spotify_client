@@ -1,6 +1,6 @@
 import 'dart:math' as math;
 
-import '../entities/song.dart';
+import '../domain/entities/song.dart';
 
 abstract class SongsData {
   static final songs = List.generate(

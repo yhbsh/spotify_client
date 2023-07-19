@@ -10,7 +10,8 @@ class BottomBarPlayingSongWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.watch<CurrentSongNotifier>().state;
+    final state =
+        context.select<CurrentSongNotifier, CurrentSongState>((notifier) => notifier.state);
     return Positioned(
       left: 12,
       top: 8,

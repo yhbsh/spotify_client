@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_staggered_animations/flutter_staggered_animations.dart';
 
-import '../../../entities/song.dart';
+import '../../../../domain/entities/song.dart';
 import '../../../notifiers/songs_notifier.dart';
 import 'song_grid_card.dart';
 

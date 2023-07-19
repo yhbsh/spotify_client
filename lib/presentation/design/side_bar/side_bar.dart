@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../resources/color_manager.dart';
+import '../../../core/resources/color_manager.dart';
 import '../common/current_song_image.dart';
 import 'side_bar_list_tile.dart';
 

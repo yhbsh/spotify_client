@@ -18,7 +18,8 @@ class PlayPauseSongButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentSongState = context.watch<CurrentSongNotifier>().state;
+    final currentSongState =
+        context.select<CurrentSongNotifier, CurrentSongState>((notifier) => notifier.state);
     return IconButton(
       padding: EdgeInsets.zero,
       constraints: const BoxConstraints.tightFor(width: 35, height: 35),

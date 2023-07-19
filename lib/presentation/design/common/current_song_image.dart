@@ -10,7 +10,8 @@ class CurrentSongImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state = context.watch<CurrentSongNotifier>().state;
+    final state =
+        context.select<CurrentSongNotifier, CurrentSongState>((notifier) => notifier.state);
     return switch (state.status) {
       CurrentSongStatus.idle => const SizedBox.shrink(),
       CurrentSongStatus.playing || CurrentSongStatus.paused => switch (state.song!.image) {

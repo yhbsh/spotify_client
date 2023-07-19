@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../design/main_screen.dart';
-import '../notifiers/current_song_notifier.dart';
+import '../presentation/design/main_screen.dart';
+import '../presentation/notifiers/current_song_notifier.dart';
 
 class Spotify extends StatelessWidget {
   const Spotify({super.key});

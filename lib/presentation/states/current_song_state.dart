@@ -1,4 +1,4 @@
-import '../entities/song.dart';
+import '../../domain/entities/song.dart';
 
 class CurrentSongState {
   final Song? song;
