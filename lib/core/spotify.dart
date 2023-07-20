@@ -10,7 +10,7 @@ import '../presentation/design/main_screen/main_screen.dart';
 import '../presentation/notifiers/current_song_notifier.dart';
 import '../presentation/notifiers/library_notifier.dart';
 import '../presentation/notifiers/songs_notifier.dart';
-import 'notifiers/theme_mode_notifier.dart';
+import '../presentation/notifiers/theme_mode_notifier.dart';
 import 'resources/theme_manager.dart';
 
 class Spotify extends StatelessWidget {

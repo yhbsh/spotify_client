@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../core/notifiers/theme_mode_notifier.dart';
+import '../../notifiers/theme_mode_notifier.dart';
 import '../../../main.dart';
 import '../common/current_song_image.dart';
 import 'side_bar_list_tile.dart';
