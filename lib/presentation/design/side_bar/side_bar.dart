@@ -1,11 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
+import '../../../core/notifiers/theme_mode_notifier.dart';
 import '../../../main.dart';
 import '../common/current_song_image.dart';
 import 'side_bar_list_tile.dart';
 
 class SideBar extends StatelessWidget {
   const SideBar({super.key});
+
+  void _toggleTheme(BuildContext context) {
+    final themeModeNotifier = Provider.of<ThemeModeNotifier>(context, listen: false);
+    themeModeNotifier.toggle();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -49,6 +56,24 @@ class SideBar extends StatelessWidget {
                   icon: const Icon(Icons.library_music),
                 ),
               ],
+            ),
+          ),
+          Align(
+            child: IconButton(
+              onPressed: () => _toggleTheme(context),
+              icon: Selector<ThemeModeNotifier, ThemeMode>(
+                selector: (_, notifier) => notifier.value,
+                builder: (_, themeMode, __) {
+                  return Icon(
+                    switch (themeMode) {
+                      ThemeMode.dark => Icons.light_mode,
+                      ThemeMode.light => Icons.dark_mode,
+                      ThemeMode.system => Icons.brightness_auto,
+                    },
+                    color: colorScheme.onBackground,
+                  );
+                },
+              ),
             ),
           ),
           const Padding(

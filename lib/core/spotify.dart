@@ -10,6 +10,7 @@ import '../presentation/design/main_screen/main_screen.dart';
 import '../presentation/notifiers/current_song_notifier.dart';
 import '../presentation/notifiers/library_notifier.dart';
 import '../presentation/notifiers/songs_notifier.dart';
+import 'notifiers/theme_mode_notifier.dart';
 import 'resources/theme_manager.dart';
 
 class Spotify extends StatelessWidget {
@@ -37,13 +38,19 @@ class Spotify extends StatelessWidget {
         ),
         ChangeNotifierProvider(
           create: (_) => LibraryNotifier(context),
-        )
+        ),
+        ChangeNotifierProvider.value(value: ThemeModeNotifier()),
       ],
-      child: MaterialApp(
-        theme: ThemeManager.light,
-        darkTheme: ThemeManager.dark,
-        themeMode: ThemeMode.light,
-        home: const MainScreen(),
+      child: Selector<ThemeModeNotifier, ThemeMode>(
+        selector: (_, notifier) => notifier.value,
+        builder: (_, themeMode, __) {
+          return MaterialApp(
+            theme: ThemeManager.light,
+            darkTheme: ThemeManager.dark,
+            themeMode: themeMode,
+            home: const MainScreen(),
+          );
+        },
       ),
     );
   }
