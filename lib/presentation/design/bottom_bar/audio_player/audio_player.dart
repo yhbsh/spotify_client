@@ -18,6 +18,7 @@ class AudioPlayer extends StatelessWidget {
         Divider(height: 0),
         SizedBox(height: 8),
         Expanded(
+          flex: 2,
           child: Row(
             mainAxisSize: MainAxisSize.min,
             children: [
