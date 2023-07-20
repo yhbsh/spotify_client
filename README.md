@@ -4,6 +4,7 @@ a pixel perfect spotify clone made with flutter for desktop and web
 
 ## Screenshots
 
+![](./screenshots/6.png)
 ![](./screenshots/1.png)
 ![](./screenshots/2.png)
 ![](./screenshots/3.png)
