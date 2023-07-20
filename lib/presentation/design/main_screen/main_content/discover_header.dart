@@ -12,7 +12,7 @@ class DiscoverHeader extends StatelessWidget {
         'Discover',
         style: textTheme.headlineSmall?.copyWith(
           fontWeight: FontWeight.bold,
-          color: Colors.white,
+          // color: Colors.white,
         ),
       ),
     );

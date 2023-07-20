@@ -18,7 +18,6 @@ class SideBarListTile extends StatelessWidget {
       color: Colors.transparent,
       child: InkWell(
         onTap: onTap,
-        hoverColor: Colors.white.withOpacity(.1),
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
           child: Row(
@@ -29,7 +28,6 @@ class SideBarListTile extends StatelessWidget {
                 child: Text(
                   title,
                   style: const TextStyle(
-                    color: Colors.white,
                     fontSize: 16,
                     fontWeight: FontWeight.w500,
                     overflow: TextOverflow.ellipsis,

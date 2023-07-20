@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-import '../../../notifiers/current_song_notifier.dart';
+import '../../notifiers/current_song_notifier.dart';
 
 class VolumeConrols extends StatelessWidget {
   const VolumeConrols({super.key});
@@ -30,15 +30,12 @@ class VolumeConrols extends StatelessWidget {
             builder: (context, isMuted, __) {
               return IconButton(
                 style: IconButton.styleFrom(padding: EdgeInsets.zero),
-                hoverColor: Colors.white24,
-                highlightColor: Colors.grey,
                 onPressed: () => _toggleMute(context),
                 icon: Icon(
                   switch (isMuted) {
                     false => Icons.volume_up,
                     true => Icons.volume_off,
                   },
-                  color: Colors.white,
                 ),
               );
             },

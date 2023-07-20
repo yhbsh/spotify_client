@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../main.dart';
 import '../side_bar/side_bar.dart';
-import 'bottom_bar/bottom_bar.dart';
+import '../bottom_bar/bottom_bar.dart';
 import 'library_content/library_content.dart';
 import 'main_content/main_content.dart';
 
@@ -11,14 +11,11 @@ class MainScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      color: Colors.transparent,
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+    return Scaffold(
+      body: Column(
         children: [
           Expanded(
             child: Row(
-              mainAxisSize: MainAxisSize.min,
               children: [
                 const SideBar(),
                 Expanded(
@@ -30,7 +27,7 @@ class MainScreen extends StatelessWidget {
               ],
             ),
           ),
-          const BottomBar(),
+          const BottomBar()
         ],
       ),
     );

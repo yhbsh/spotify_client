@@ -19,4 +19,6 @@ class LibraryNotifier extends ChangeNotifier {
     _songs.remove(song);
     notifyListeners();
   }
+
+  bool isSongInLibrary(Song song) => _songs.contains(song);
 }

@@ -9,8 +9,6 @@ class ShuffleSongsButton extends StatelessWidget {
     return IconButton(
       constraints: const BoxConstraints.tightFor(width: 35, height: 35),
       padding: EdgeInsets.zero,
-      hoverColor: Colors.white24,
-      highlightColor: Colors.white38,
       onPressed: () {},
       icon: Icon(Icons.shuffle, color: colorScheme.primary, size: 25),
     );

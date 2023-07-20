@@ -15,23 +15,26 @@ class AudioPlayer extends StatelessWidget {
     return const Column(
       mainAxisSize: MainAxisSize.min,
       children: [
-        SizedBox(height: 4),
-        Row(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            ShuffleSongsButton(),
-            SizedBox(width: 10),
-            PlayPreviousSongButton(),
-            SizedBox(width: 10),
-            PlayPauseAudioButton(),
-            SizedBox(width: 10),
-            PlayNextSongButton(),
-            SizedBox(width: 10),
-            RepeatSongsButton(),
-          ],
+        Divider(height: 0),
+        SizedBox(height: 8),
+        Expanded(
+          child: Row(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              ShuffleSongsButton(),
+              SizedBox(width: 10),
+              PlayPreviousSongButton(),
+              SizedBox(width: 10),
+              PlayPauseAudioButton(),
+              SizedBox(width: 10),
+              PlayNextSongButton(),
+              SizedBox(width: 10),
+              RepeatSongsButton(),
+            ],
+          ),
         ),
-        SizedBox(height: 4),
-        AudioTimeline(),
+        // SizedBox(height: 8),
+        Expanded(child: AudioTimeline()),
         SizedBox(height: 4),
       ],
     );

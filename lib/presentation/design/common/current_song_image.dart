@@ -10,29 +10,32 @@ class CurrentSongImage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final state =
-        context.select<CurrentSongNotifier, CurrentSongState>((notifier) => notifier.state);
-    return switch (state.status) {
-      CurrentSongStatus.stopped => const SizedBox.shrink(),
-      CurrentSongStatus.playing || CurrentSongStatus.paused => switch (state.song!.image) {
-          null => const SizedBox.expand(),
-          String image => CachedNetworkImage(
-              imageUrl: image,
-              imageBuilder: (_, provider) {
-                return AspectRatio(
-                  aspectRatio: 1,
-                  child: DecoratedBox(
-                    decoration: BoxDecoration(
-                      image: DecorationImage(image: provider, fit: BoxFit.cover),
-                      borderRadius: BorderRadius.circular(4),
-                    ),
-                  ),
-                );
-              },
-              placeholder: (_, __) => const SizedBox.expand(),
-              errorWidget: (_, __, ___) => const SizedBox.expand(),
-            ),
-        },
-    };
+    return Selector<CurrentSongNotifier, CurrentSongState>(
+      selector: (_, notifier) => notifier.state,
+      builder: (_, state, __) {
+        return switch (state.status) {
+          CurrentSongStatus.stopped => const SizedBox.shrink(),
+          CurrentSongStatus.playing || CurrentSongStatus.paused => switch (state.song!.image) {
+              null => const SizedBox.expand(),
+              String image => CachedNetworkImage(
+                  imageUrl: image,
+                  imageBuilder: (_, provider) {
+                    return AspectRatio(
+                      aspectRatio: 1,
+                      child: DecoratedBox(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(image: provider, fit: BoxFit.cover),
+                          borderRadius: BorderRadius.circular(4),
+                        ),
+                      ),
+                    );
+                  },
+                  placeholder: (_, __) => const SizedBox.expand(),
+                  errorWidget: (_, __, ___) => const SizedBox.expand(),
+                ),
+            },
+        };
+      },
+    );
   }
 }

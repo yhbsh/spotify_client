@@ -8,7 +8,9 @@ import '../domain/repositories/audio_player_repository.dart';
 import '../domain/repositories/songs_repository.dart';
 import '../presentation/design/main_screen/main_screen.dart';
 import '../presentation/notifiers/current_song_notifier.dart';
+import '../presentation/notifiers/library_notifier.dart';
 import '../presentation/notifiers/songs_notifier.dart';
+import 'resources/theme_manager.dart';
 
 class Spotify extends StatelessWidget {
   const Spotify({super.key});
@@ -33,14 +35,14 @@ class Spotify extends StatelessWidget {
           create: (context) => SongsNotifier(context),
           lazy: true,
         ),
+        ChangeNotifierProvider(
+          create: (_) => LibraryNotifier(context),
+        )
       ],
       child: MaterialApp(
-        theme: ThemeData.from(
-          colorScheme: ColorScheme.fromSeed(
-            seedColor: Colors.greenAccent,
-          ),
-          useMaterial3: true,
-        ),
+        theme: ThemeManager.light,
+        darkTheme: ThemeManager.dark,
+        themeMode: ThemeMode.light,
         home: const MainScreen(),
       ),
     );

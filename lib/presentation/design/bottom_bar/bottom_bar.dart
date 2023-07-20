@@ -9,12 +9,13 @@ class BottomBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const SizedBox(
-      height: 720 * 0.1,
+    final colorScheme = Theme.of(context).colorScheme;
+    return SizedBox(
+      height: 720 * 0.11,
       width: double.infinity,
       child: ColoredBox(
-        color: Colors.black12,
-        child: Stack(
+        color: colorScheme.background,
+        child: const Stack(
           alignment: Alignment.center,
           children: [
             CurrentPlayingSongCard(),
