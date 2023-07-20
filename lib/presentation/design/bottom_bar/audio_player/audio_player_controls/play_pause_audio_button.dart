@@ -21,7 +21,7 @@ class PlayPauseAudioButton extends StatelessWidget {
     final colorScheme = Theme.of(context).colorScheme;
     return IconButton.filled(
       padding: EdgeInsets.zero,
-      style: IconButton.styleFrom(backgroundColor: colorScheme.onBackground),
+      style: IconButton.styleFrom(backgroundColor: colorScheme.onSurface),
       constraints: const BoxConstraints.tightFor(width: 35, height: 35),
       onPressed: () => _onPressed(context),
       splashRadius: 10,
