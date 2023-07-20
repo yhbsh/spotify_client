@@ -18,6 +18,7 @@ class MainScreen extends StatelessWidget {
             child: Row(
               children: [
                 const SideBar(),
+                const VerticalDivider(),
                 Expanded(
                   child: Navigator(
                     key: shellKey,
