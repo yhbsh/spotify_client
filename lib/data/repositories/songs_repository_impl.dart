@@ -6,7 +6,7 @@ import '../dtos/requests/fetch_songs_request.dart';
 import '../dtos/requests/watch_songs_request.dart';
 import '../dtos/responses/fetch_songs_response.dart';
 import '../dtos/responses/watch_songs_response.dart';
-import '../songs.dart';
+import '../fake_songs.dart';
 
 class SongsRepositoryImpl implements SongsRepository {
   const SongsRepositoryImpl();

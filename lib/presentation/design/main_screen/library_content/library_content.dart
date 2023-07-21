@@ -16,12 +16,15 @@ class LibraryContent extends StatelessWidget {
       builder: (_, songs, __) => ListView.builder(
         itemCount: songs.length,
         itemBuilder: (_, index) => ListTile(
-          leading: switch (songs[index].image) {
-            null => const Icon(Icons.music_note),
-            final image => CachedNetworkImage(
-                imageUrl: image,
-                placeholder: (_, __) => const Icon(Icons.music_note),
-              ),
+          leading: switch (songs[index].imagesUrls.length) {
+            0 => const Icon(Icons.music_note),
+            _ => switch (songs[index].imagesUrls[0]) {
+                null => const Icon(Icons.music_note),
+                final image => CachedNetworkImage(
+                    imageUrl: image,
+                    placeholder: (_, __) => const Icon(Icons.music_note),
+                  ),
+              },
           },
           title: Text(songs[index].name),
           subtitle: Text(songs[index].artist),

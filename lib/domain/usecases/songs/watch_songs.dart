@@ -34,7 +34,7 @@ class WatchSongsUseCase implements StreamUseCase<WatchSongsResult, WatchSongsPar
                 id: response.songs[i].id,
                 name: response.songs[i].name,
                 url: response.songs[i].url,
-                image: response.songs[i].image,
+                imagesUrls: response.songs[i].imagesUrls,
                 description: response.songs[i].description,
                 artist: response.songs[i].artist,
               ),

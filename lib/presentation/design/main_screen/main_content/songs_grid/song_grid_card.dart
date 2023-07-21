@@ -27,7 +27,7 @@ class SongGridCard extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              SongsGridCardImage(image: song.image),
+              SongsGridCardImage(image: song.imagesUrls[0]),
               const SizedBox(height: 8),
               Expanded(
                 child: Text(
